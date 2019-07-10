@@ -1,8 +1,8 @@
-const intialState = {
+const initialState = {
   counter: 0
 };
 
-const reducer = (state = intialState, action) => {
+const reducer = (state = initialState, action) => {
   return state;
 };
 
