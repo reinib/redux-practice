@@ -32,6 +32,18 @@ const reducer = (state = initialState, action) => {
         // Concat returns new array thus is an immutable way to push items to an array
         results: state.results.concat({ id: new Date(), value: state.counter })
       };
+    case "DELETE_RESULT":
+      //   less optimal way
+      //   const id = 2
+      //   const newArray = [...state.results]
+      //   newArray.splice(id, 1)
+      const updatedArray = state.results.filter(
+        result => result.id !== action.resultElId
+      );
+      return {
+        ...state,
+        results: updatedArray
+      };
   }
   return state;
 };
